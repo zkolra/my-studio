@@ -55,6 +55,32 @@
   color: var(--muted);
 }
 
+.svc__list {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.svc:first-child {
+  border-color: rgba(184, 255, 56, 0.45);
+}
+
+.svc:first-child::before {
+  content: "5 шаблонов на выбор";
+  position: absolute;
+  top: -12px;
+  right: 22px;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: var(--lime);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+}
+
 .svc__foot {
   display: flex;
   justify-content: space-between;
@@ -66,7 +92,7 @@
 }
 
 .svc__foot strong {
-  font-size: clamp(32px, 3vw, 50px);
+  font-size: clamp(30px, 2.6vw, 46px);
   color: var(--lime);
 }
 

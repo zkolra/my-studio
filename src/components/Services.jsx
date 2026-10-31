@@ -38,6 +38,13 @@ function Services() {
             <span className="svc__num mono">0{i + 1}</span>
             <h3>{s.title}</h3>
             <p>{s.text}</p>
+            <ul className="svc__list mono">
+              {s.list.map((l) => (
+                <li key={l}>
+                  <span className="lime">✓</span> {l}
+                </li>
+              ))}
+            </ul>
             <div className="svc__foot">
               <strong className="display">{s.price}</strong>
               <span className="mono">{s.time}</span>
