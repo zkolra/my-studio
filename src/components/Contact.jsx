@@ -15,7 +15,41 @@ function Contact() {
   const inputRef = useRef(null);
   const screen = useRef(null);
   const [copied, setCopied] = useState(false);
-  const [log, setLog] = useState([{ type: "out", text: contact.terminal.hint }]);
+  const [log, setLog] = useState([]);
+  const [typing, setTyping] = useState("");
+
+  /* Демо: когда терминал появляется на экране, он сам «набирает» несколько команд */
+  useEffect(() => {
+    const t = contact.terminal;
+    const demo = ["about", "services", "contact"];
+    if (reducedMotion()) {
+      setLog([...demo.flatMap((c) => [{ type: "in", text: c }, { type: "out", text: t.commands[c] }]), { type: "out", text: t.hint }]);
+      return;
+    }
+    let timers = [];
+    let started = false;
+    const run = () => {
+      if (started) return;
+      started = true;
+      let at = 300;
+      demo.forEach((c) => {
+        [...c].forEach((_, i) => timers.push(setTimeout(() => setTyping(c.slice(0, i + 1)), at + i * 70)));
+        at += c.length * 70 + 250;
+        timers.push(setTimeout(() => {
+          setTyping("");
+          setLog((l) => [...l, { type: "in", text: c }, { type: "out", text: t.commands[c] }]);
+        }, at));
+        at += 500;
+      });
+      timers.push(setTimeout(() => setLog((l) => [...l, { type: "out", text: t.hint, hint: true }]), at));
+    };
+    const io = new IntersectionObserver(([e]) => e.isIntersecting && run(), { threshold: 0.4 });
+    if (screen.current) io.observe(screen.current);
+    return () => {
+      io.disconnect();
+      timers.forEach(clearTimeout);
+    };
+  }, [contact]);
   const [cmd, setCmd] = useState("");
 
   useLayoutEffect(() => {
@@ -97,7 +131,7 @@ function Contact() {
           </div>
           <div className="term__screen mono" ref={screen}>
             {log.map((l, i) => (
-              <p key={i} className={l.type === "in" ? "term__in" : "term__out"}>
+              <p key={i} className={l.type === "in" ? "term__in" : `term__out${l.hint ? " lime" : ""}`}>
                 {l.type === "in" ? (
                   <>
                     <span className="lime">➜</span> <span className="term__path">~/dev22</span> {l.text}
@@ -109,6 +143,7 @@ function Contact() {
             ))}
             <form onSubmit={run} className="term__form">
               <span className="lime">➜</span> <span className="term__path">~/dev22</span>
+              {typing && <span>{typing}</span>}
               <input ref={inputRef} value={cmd} onChange={(e) => setCmd(e.target.value)} aria-label="Terminal command" autoComplete="off" spellCheck="false" />
             </form>
           </div>
