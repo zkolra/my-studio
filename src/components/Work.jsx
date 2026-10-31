@@ -4,12 +4,13 @@ import { work } from "../content";
 import Player from "./Player";
 import "../styles/work.css";
 
-const reel = (slug) => `/reels/${slug}.mp4`;
-const poster = (slug) => `/reels/${slug}.jpg`;
+// кадр первого экрана каждого сайта: src/assets/<slug>.jpg
+const shots = import.meta.glob("../assets/*.jpg", { eager: true, import: "default" });
+const poster = (slug) => shots[`../assets/${slug}.jpg`];
 
 /* Работы: карточки складываются стопкой при прокрутке — новая наезжает,
-   предыдущая уменьшается и темнеет. При наведении в карточке
-   начинает прокручиваться сам сайт. Клик — окно браузера на весь экран. */
+   предыдущая уменьшается и темнеет. Клик — живой сайт открывается
+   прямо здесь, в окне браузера: его можно листать и нажимать. */
 function Work() {
   const root = useRef(null);
   const [open, setOpen] = useState(null);
@@ -31,13 +32,6 @@ function Work() {
     });
     return () => mm.revert();
   }, []);
-
-  const hover = (e, on) => {
-    const v = e.currentTarget.querySelector("video");
-    if (!v || reducedMotion()) return;
-    if (on) v.play().catch(() => {});
-    else v.pause();
-  };
 
   return (
     <section className="work" id="work" ref={root}>
@@ -62,9 +56,7 @@ function Work() {
               <button
                 className="wcard__media"
                 onClick={() => setOpen(i)}
-                onPointerEnter={(e) => hover(e, true)}
-                onPointerLeave={(e) => hover(e, false)}
-                data-cursor="▶ Смотреть сайт"
+                data-cursor="▶ Открыть"
                 aria-label={`Смотреть ${p.name}`}
               >
                 <span className="wcard__chrome mono">
@@ -73,11 +65,11 @@ function Work() {
                     <i />
                     <i />
                   </span>
-                  <span className="wcard__url">{p.host}.dev22.es</span>
+                  <span className="wcard__url">{p.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span>
                 </span>
                 <span className="wcard__screen">
                   <img src={poster(p.slug)} alt="" loading="lazy" />
-                  <video src={reel(p.slug)} muted loop playsInline preload="none" />
+                  <span className="wcard__play mono">▶ Открыть сайт здесь</span>
                 </span>
               </button>
               <div className="wcard__info">
@@ -91,11 +83,11 @@ function Work() {
                 <p>{p.text}</p>
                 <div className="wcard__actions">
                   <button className="btn btn--lime" onClick={() => setOpen(i)}>
-                    ▶ Смотреть
+                    ▶ Смотреть сайт
                   </button>
                   {p.url && (
                     <a className="btn btn--ghost" href={p.url} target="_blank" rel="noreferrer">
-                      Открыть сайт ↗
+                      В новой вкладке ↗
                     </a>
                   )}
                 </div>
@@ -105,7 +97,7 @@ function Work() {
         ))}
       </div>
 
-      {open !== null && <Player item={work.items[open]} src={reel(work.items[open].slug)} poster={poster(work.items[open].slug)} onClose={() => setOpen(null)} />}
+      {open !== null && <Player item={work.items[open]} onClose={() => setOpen(null)} />}
     </section>
   );
 }

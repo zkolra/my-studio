@@ -113,9 +113,32 @@
   transition: transform 1s var(--ease);
 }
 
-.wcard__media:hover img,
-.wcard__media:hover video {
-  transform: scale(1.03);
+.wcard__media:hover img {
+  transform: scale(1.04);
+}
+
+/* «Открыть сайт здесь» — появляется при наведении */
+.wcard__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 12px 20px;
+  border-radius: 100px;
+  background: var(--lime);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -40%);
+  transition: opacity 0.4s, transform 0.5s var(--ease);
+  box-shadow: var(--glow);
+}
+
+.wcard__media:hover .wcard__play,
+.wcard__media:focus-visible .wcard__play {
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
 .wcard__info {

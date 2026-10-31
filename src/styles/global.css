@@ -282,3 +282,8 @@ html.no-scroll {
     display: none;
   }
 }
+
+/* пока открыт живой сайт — свой курсор прячем, внутри сайта работает его собственный */
+html.no-scroll .cursor {
+  display: none;
+}
