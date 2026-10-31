@@ -1,0 +1,284 @@
+/* =====================================================================
+   DEV/22 — цвета, шрифты, отступы.
+   ===================================================================== */
+:root {
+  --bg: #070807;
+  --bg-2: #0f110f;
+  --bg-3: #161916;
+  --text: #f2f2ed;
+  --muted: rgba(242, 242, 237, 0.56);
+  --line: rgba(242, 242, 237, 0.12);
+  --lime: #b8ff38; /* фирменный лайм */
+  --lime-soft: rgba(184, 255, 56, 0.14);
+  --glow: 0 0 18px rgba(184, 255, 56, 0.55), 0 0 60px rgba(184, 255, 56, 0.25);
+
+  --display: "Oswald Variable", "Oswald", Impact, sans-serif; /* заголовки, с кириллицей */
+  --logo: "Anton", Impact, sans-serif; /* только логотип */
+  --sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+
+  --pad: clamp(18px, 3.4vw, 48px);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--bg);
+}
+
+html.no-scroll {
+  overflow: hidden;
+}
+
+/* ---------- Общие элементы ---------- */
+
+.mono {
+  font-family: var(--mono);
+}
+
+.display {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.lime {
+  color: var(--lime);
+}
+
+/* Логотип DEV/22: косая черта — тонкая лаймовая линия */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--logo);
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.logo i {
+  display: inline-block;
+  width: 0.06em;
+  height: 1.05em;
+  margin: 0 0.16em;
+  background: var(--lime);
+  transform: skewX(-20deg);
+  box-shadow: 0 0 8px rgba(184, 255, 56, 0.6);
+}
+
+/* Подпись блока: «01 // Работы» */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.label b {
+  color: var(--lime);
+  font-weight: 500;
+}
+
+/* Кнопки */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 26px;
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.4s var(--ease), box-shadow 0.4s;
+}
+
+.btn--lime {
+  background: var(--lime);
+  color: var(--bg);
+}
+
+.btn--lime:hover {
+  box-shadow: var(--glow);
+}
+
+.btn--ghost {
+  border: 1px solid var(--line);
+}
+
+.btn--ghost::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--lime);
+  transform: translateY(101%);
+  transition: transform 0.5s var(--ease);
+}
+
+.btn--ghost:hover {
+  color: var(--bg);
+}
+
+.btn--ghost:hover::before {
+  transform: none;
+}
+
+/* Строки, которые выезжают снизу */
+.split-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.04em;
+}
+
+.split-line > span {
+  display: inline-block;
+}
+
+/* Мигающий курсор терминала */
+.caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--lime);
+  animation: caret 1s steps(2, start) infinite;
+}
+
+@keyframes caret {
+  to { visibility: hidden; }
+}
+
+/* Сетка точек на фоне */
+.dots-bg {
+  background-image: radial-gradient(rgba(242, 242, 237, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ---------- Курсор: лаймовый уголок-прицел ---------- */
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.cursor__dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 10px var(--lime);
+}
+
+.cursor__frame {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  transition: width 0.4s var(--ease), height 0.4s var(--ease), margin 0.4s var(--ease);
+}
+
+.cursor__frame i {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--lime);
+  border-style: solid;
+  border-width: 0;
+}
+
+.cursor__frame i:nth-child(1) { top: 0; left: 0; border-top-width: 1.5px; border-left-width: 1.5px; }
+.cursor__frame i:nth-child(2) { top: 0; right: 0; border-top-width: 1.5px; border-right-width: 1.5px; }
+.cursor__frame i:nth-child(3) { bottom: 0; left: 0; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.cursor__frame i:nth-child(4) { bottom: 0; right: 0; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+
+.cursor.is-hot .cursor__frame {
+  width: 54px;
+  height: 54px;
+  margin: -27px 0 0 -27px;
+}
+
+.cursor__label {
+  position: absolute;
+  left: 34px;
+  top: 10px;
+  padding: 5px 9px;
+  border-radius: 4px;
+  background: var(--lime);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s, transform 0.4s var(--ease);
+}
+
+.cursor.has-label .cursor__label {
+  opacity: 1;
+  transform: none;
+}
+
+@media (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}

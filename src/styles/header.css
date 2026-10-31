@@ -1,0 +1,150 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 16px var(--pad);
+  transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
+  border-bottom: 1px solid transparent;
+}
+
+.header.is-solid {
+  background: rgba(7, 8, 7, 0.7);
+  backdrop-filter: blur(12px);
+  border-color: var(--line);
+}
+
+.header__logo .logo {
+  font-size: 30px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+}
+
+.header__nav a {
+  display: flex;
+  gap: 6px;
+  transition: color 0.3s;
+}
+
+.header__nav b {
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--lime);
+}
+
+.header__nav a:hover {
+  color: var(--lime);
+}
+
+.header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 22px;
+}
+
+.header__clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.header__clock i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 8px var(--lime);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: 0.35; }
+}
+
+.header__cta {
+  padding: 11px 18px;
+  font-size: 12px;
+}
+
+.header__burger {
+  display: none;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+
+.header__burger i {
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  height: 1.5px;
+  background: var(--lime);
+  transition: transform 0.5s var(--ease);
+}
+
+.header__burger i:first-child { top: 17px; }
+.header__burger i:last-child { top: 23px; }
+.header.is-open .header__burger i:first-child { transform: translateY(3px) rotate(45deg); }
+.header.is-open .header__burger i:last-child { transform: translateY(-3px) rotate(-45deg); }
+
+.mnav {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 110px var(--pad) 34px;
+  background: var(--bg);
+  visibility: hidden;
+}
+
+.mnav__link {
+  display: block;
+  overflow: hidden;
+  font-size: 16vw;
+}
+
+.mnav__link span {
+  display: inline-block;
+}
+
+.mnav__link small {
+  margin-right: 10px;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.mnav__mail {
+  color: var(--lime);
+}
+
+@media (max-width: 960px) {
+  .header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .header__nav,
+  .header__clock,
+  .header__cta {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+  }
+}

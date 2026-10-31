@@ -1,0 +1,22 @@
+.stack {
+  overflow: hidden;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.stack__track {
+  display: flex;
+  width: max-content;
+  font-size: clamp(18px, 2vw, 30px);
+}
+
+.stack__track span {
+  padding-right: 2.2em;
+  white-space: nowrap;
+}
+
+.stack__track i {
+  font-style: normal;
+  color: var(--lime);
+}
