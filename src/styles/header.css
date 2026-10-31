@@ -111,12 +111,13 @@
   padding: 110px var(--pad) 34px;
   background: var(--bg);
   visibility: hidden;
+  overflow: hidden;
 }
 
 .mnav__link {
   display: block;
   overflow: hidden;
-  font-size: 16vw;
+  font-size: 13vw;
 }
 
 .mnav__link span {
@@ -140,11 +141,51 @@
 
   .header__nav,
   .header__clock,
-  .header__cta {
+  .header .header__cta {
     display: none;
   }
 
   .header__burger {
     display: block;
+  }
+}
+
+/* Переключатель языков RU / EN / ES */
+.lang {
+  display: flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+}
+
+.lang button {
+  padding: 6px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  color: var(--muted);
+  transition: color 0.3s, background 0.3s;
+}
+
+.lang button:hover {
+  color: var(--text);
+}
+
+.lang button.is-on {
+  background: var(--lime);
+  color: var(--bg);
+}
+
+.lang--big {
+  align-self: flex-start;
+}
+
+.lang--big button {
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 960px) {
+  .header__right > .lang {
+    display: none;
   }
 }

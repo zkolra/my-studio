@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
+import { LangProvider } from "./i18n";
 
 /* Шрифты лежат внутри сайта — одинаковые везде */
 import "@fontsource/anton"; // логотип DEV/22
@@ -11,6 +12,8 @@ import "./styles/global.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <LangProvider>
+      <App />
+    </LangProvider>
   </StrictMode>
 );

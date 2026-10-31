@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import { gsap, reducedMotion } from "../lib/motion";
-import { services } from "../content";
+import { useContent } from "../i18n";
 import "../styles/services.css";
 
 /* Услуги: три карточки. За курсором внутри карточки ходит лаймовое свечение,
    рамка подсвечивается, карточка чуть наклоняется. */
 function Services() {
+  const { services } = useContent();
   const move = (e) => {
     const el = e.currentTarget;
     const b = el.getBoundingClientRect();
@@ -36,6 +37,7 @@ function Services() {
         {services.items.map((s, i) => (
           <article className="svc js-fade" key={s.title} onPointerMove={move} onPointerLeave={leave}>
             <span className="svc__num mono">0{i + 1}</span>
+            {i === 0 && <span className="svc__badge mono">{services.badge}</span>}
             <h3>{s.title}</h3>
             <p>{s.text}</p>
             <ul className="svc__list mono">

@@ -1,12 +1,13 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { gsap, reducedMotion } from "../lib/motion";
-import { preloader } from "../content";
+import { useContent } from "../i18n";
 import Logo from "./Logo";
 import "../styles/preloader.css";
 
 /* Заставка-терминал: команды «печатаются», справа загорается [OK],
    потом «ready in 22ms» и логотип вспыхивает, как неоновая трубка. */
 function Preloader({ onReveal }) {
+  const { preloader } = useContent();
   const root = useRef(null);
   const [gone, setGone] = useState(false);
 

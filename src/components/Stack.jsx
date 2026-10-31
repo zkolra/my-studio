@@ -1,11 +1,12 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap, ScrollTrigger, reducedMotion } from "../lib/motion";
-import { stack } from "../content";
+import { useContent } from "../i18n";
 import "../styles/stack.css";
 
 /* Бегущая строка технологий: слова в виде тегов &lt;React /&gt;,
    ускоряется и наклоняется, когда листаешь. */
 function Stack() {
+  const { stack } = useContent();
   const root = useRef(null);
 
   useLayoutEffect(() => {

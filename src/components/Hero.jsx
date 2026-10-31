@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap, reducedMotion } from "../lib/motion";
 import { scramble } from "../lib/scramble";
-import { hero } from "../content";
+import { useContent } from "../i18n";
 import "../styles/hero.css";
 
 /* Первый экран. Слева заголовок: строки выезжают, слово «работают.»
@@ -9,6 +9,7 @@ import "../styles/hero.css";
    строки печатаются, потом «компилируются» и внизу загорается ✓ Compiled.
    Сетка точек подсвечивается вокруг курсора, редактор наклоняется за мышью. */
 function Hero({ ready }) {
+  const { hero } = useContent();
   const root = useRef(null);
   const accent = useRef(null);
   const editor = useRef(null);
@@ -159,7 +160,6 @@ function Hero({ ready }) {
             <div className="hero__stat" key={s.label}>
               <span className="display">
                 <b data-value={s.value}>{s.value}</b>
-                {s.suffix}
               </span>
               <small className="mono">{s.label}</small>
             </div>

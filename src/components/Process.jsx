@@ -1,11 +1,12 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap, reducedMotion } from "../lib/motion";
-import { process } from "../content";
+import { useContent } from "../i18n";
 import "../styles/process.css";
 
 /* Процесс как история коммитов (git log): лаймовая линия ветки
    прорастает вниз при прокрутке, узлы загораются по очереди. */
 function Process() {
+  const { process } = useContent();
   const root = useRef(null);
 
   useLayoutEffect(() => {

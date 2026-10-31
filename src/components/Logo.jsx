@@ -1,4 +1,5 @@
-import { brand } from "../content";
+import { shared } from "../content";
+const { brand } = shared;
 
 /* DEV/22 — косая черта рисуется тонкой лаймовой линией */
 function Logo({ className = "" }) {

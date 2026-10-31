@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "../lib/motion";
-import { brand, nav } from "../content";
+import { useContent } from "../i18n";
 import { scramble } from "../lib/scramble";
 import Logo from "./Logo";
 import "../styles/header.css";
@@ -8,6 +8,7 @@ import "../styles/header.css";
 /* Шапка: логотип, пункты меню «расшифровываются» при наведении,
    живые часы Испании, кнопка. Прячется при прокрутке вниз. */
 function Header() {
+  const { brand, nav, cta, lang, languages, setLang } = useContent();
   const bar = useRef(null);
   const clock = useRef(null);
   const overlay = useRef(null);
@@ -64,8 +65,15 @@ function Header() {
           <span className="header__clock mono">
             <i /> {brand.city} <span ref={clock} />
           </span>
+          <div className="lang mono" role="group" aria-label="Language">
+            {languages.map((l) => (
+              <button key={l.code} className={l.code === lang ? "is-on" : ""} onClick={() => setLang(l.code)} aria-pressed={l.code === lang}>
+                {l.label}
+              </button>
+            ))}
+          </div>
           <a className="btn btn--lime header__cta" href="#contact">
-            Обсудить проект ↗
+            {cta} ↗
           </a>
           <button className="header__burger" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
             <i />
@@ -85,6 +93,13 @@ function Header() {
             </a>
           ))}
         </nav>
+        <div className="lang lang--big mono">
+          {languages.map((l) => (
+            <button key={l.code} className={l.code === lang ? "is-on" : ""} onClick={() => setLang(l.code)}>
+              {l.label}
+            </button>
+          ))}
+        </div>
         <a className="mnav__mail mono" href={`mailto:${brand.email}`}>
           {brand.email}
         </a>

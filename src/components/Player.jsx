@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap, reducedMotion, getLenis } from "../lib/motion";
 import { scramble } from "../lib/scramble";
+import { useContent } from "../i18n";
 import "../styles/player.css";
 
 /* Живой сайт прямо на странице: окно браузера с настоящим сайтом внутри (iframe).
    Его можно листать, нажимать, смотреть все анимации. Пока грузится — терминал-загрузка.
    Кнопка «на весь экран» разворачивает окно, Esc или ✕ — закрыть. */
 function Player({ item, onClose }) {
+  const { player } = useContent();
   const root = useRef(null);
   const url = useRef(null);
   const closing = useRef(false);
@@ -47,19 +49,19 @@ function Player({ item, onClose }) {
       <div className="player__window" style={{ "--c": item.color }}>
         <div className="player__chrome mono">
           <span className="player__dots">
-            <button onClick={close} aria-label="Закрыть" title="Закрыть" />
+            <button onClick={close} aria-label={player.close} title={player.close} />
             <i />
-            <button className="is-max" onClick={() => setFull((v) => !v)} aria-label="На весь экран" title="На весь экран" />
+            <button className="is-max" onClick={() => setFull((v) => !v)} aria-label={player.full} title={player.full} />
           </span>
           <span className="player__url">
             <b>🔒</b> <span ref={url} />
           </span>
           <span className="player__tools">
-            <button onClick={() => setFull((v) => !v)}>{full ? "⤡ Свернуть" : "⤢ На весь экран"}</button>
+            <button onClick={() => setFull((v) => !v)}>{full ? player.small : player.full}</button>
             <a href={item.url} target="_blank" rel="noreferrer">
               ↗
             </a>
-            <button onClick={close} aria-label="Закрыть">
+            <button onClick={close} aria-label={player.close}>
               ✕
             </button>
           </span>
@@ -68,10 +70,10 @@ function Player({ item, onClose }) {
           {!loaded && (
             <div className="player__loading mono">
               <p>
-                <span className="lime">&gt;</span> connecting to {host}
+                <span className="lime">&gt;</span> {player.connecting} {host}
               </p>
               <p>
-                <span className="lime">&gt;</span> loading {item.name}
+                <span className="lime">&gt;</span> {player.loading} {item.name}
                 <span className="caret" />
               </p>
             </div>
@@ -80,7 +82,7 @@ function Player({ item, onClose }) {
         </div>
       </div>
       <p className="player__hint mono">
-        <span className="lime">//</span> Это живой сайт — листайте и нажимайте. Esc — закрыть.
+        <span className="lime">//</span> {player.hint}
       </p>
     </div>
   );

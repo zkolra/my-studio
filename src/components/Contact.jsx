@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap, reducedMotion } from "../lib/motion";
 import { scramble } from "../lib/scramble";
-import { brand, contact } from "../content";
+import { useContent } from "../i18n";
 import Logo from "./Logo";
 import "../styles/contact.css";
 
@@ -9,6 +9,7 @@ import "../styles/contact.css";
    в котором можно набирать команды (help, services, hire…).
    Внизу огромный DEV/22, косая черта светится. */
 function Contact() {
+  const { brand, contact } = useContent();
   const root = useRef(null);
   const mail = useRef(null);
   const inputRef = useRef(null);

@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useState } from "react";
+import { Fragment, useCallback, useLayoutEffect, useState } from "react";
 import { gsap, ScrollTrigger, reducedMotion, startSmoothScroll } from "./lib/motion";
 
 import Preloader from "./components/Preloader";
@@ -10,8 +10,10 @@ import Work from "./components/Work";
 import Services from "./components/Services";
 import Process from "./components/Process";
 import Contact from "./components/Contact";
+import { useContent } from "./i18n";
 
 function App() {
+  const { lang } = useContent();
   const [ready, setReady] = useState(false);
   const onReveal = useCallback(() => setReady(true), []);
 
@@ -50,16 +52,27 @@ function App() {
       <Preloader onReveal={onReveal} />
       <Cursor />
       <Header />
-      <main>
-        <Hero ready={ready} />
-        <Stack />
-        <Work />
-        <Services />
-        <Process />
-      </main>
-      <Contact />
+      <LangSwitch lang={lang}>
+        <main>
+          <Hero ready={ready} />
+          <Stack />
+          <Work />
+          <Services />
+          <Process />
+        </main>
+        <Contact />
+      </LangSwitch>
     </>
   );
+}
+
+/* При смене языка блоки пересобираются (новые тексты, анимации на месте),
+   а прокрутка пересчитывается */
+function LangSwitch({ lang, children }) {
+  useLayoutEffect(() => {
+    ScrollTrigger.refresh();
+  }, [lang]);
+  return <Fragment key={lang}>{children}</Fragment>;
 }
 
 export default App;
