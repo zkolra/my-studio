@@ -1,0 +1,155 @@
+{
+  "city": "Spain",
+  "nav": [
+    "Work",
+    "Services",
+    "Process",
+    "Contact"
+  ],
+  "cta": "Start a project",
+  "hero": {
+    "status": "Available for new projects",
+    "title": [
+      "I build websites",
+      "that"
+    ],
+    "accent": "work.",
+    "lead": "Design and development of modern websites for businesses and people with ideas. Clean, fast, full of character — with motion people remember.",
+    "buttons": [
+      "See the work",
+      "Pricing & timing"
+    ],
+    "stats": [
+      {
+        "value": 98,
+        "label": "Lighthouse"
+      },
+      {
+        "value": 5,
+        "label": "templates ready"
+      },
+      {
+        "value": 7,
+        "label": "days — landing page"
+      }
+    ]
+  },
+  "work": {
+    "label": "Work",
+    "title": [
+      "Selected",
+      "projects"
+    ],
+    "text": "Every project is its own system with its own logic, rhythm and character. Click a card — the live site opens right here. Scroll it, click around.",
+    "open": "▶ Open the site here",
+    "watch": "▶ View site",
+    "newTab": "New tab ↗",
+    "cursor": "▶ Open"
+  },
+  "player": {
+    "connecting": "connecting to",
+    "loading": "loading",
+    "full": "⤢ Full screen",
+    "small": "⤡ Exit full screen",
+    "close": "Close",
+    "hint": "This is the live site — scroll and click. Esc to close."
+  },
+  "services": {
+    "label": "Services",
+    "title": [
+      "Pricing",
+      "& timing"
+    ],
+    "badge": "5 templates to choose from",
+    "items": [
+      {
+        "title": "Template website",
+        "price": "€150",
+        "time": "quick start",
+        "text": "Pick one of the 5 templates above. I replace the photos and texts with yours — the site looks just the same, with every animation, only with your content.",
+        "list": [
+          "Your photos and texts",
+          "All template animations",
+          "Mobile-friendly",
+          "Published on your domain"
+        ]
+      },
+      {
+        "title": "Custom landing page",
+        "price": "€300",
+        "time": "to be agreed",
+        "text": "A one-page website built from scratch: your own design and effects, made for your goal and your style.",
+        "list": [
+          "Unique design",
+          "Animations and effects",
+          "Responsive + basic SEO",
+          "Published on your domain"
+        ]
+      },
+      {
+        "title": "Multi-page website",
+        "price": "€300 + from €150",
+        "time": "to be agreed",
+        "text": "The first page is €300, each next page from €150 depending on complexity. One consistent style and clear navigation.",
+        "list": [
+          "First page €300",
+          "Next pages from €150",
+          "One design system",
+          "Room to grow"
+        ]
+      }
+    ],
+    "note": "A custom site starts with a conversation — no call needed. Message me on WhatsApp, Instagram or Telegram, tell me what you want, and we'll work out the details."
+  },
+  "process": {
+    "label": "Process",
+    "title": [
+      "How we",
+      "work"
+    ],
+    "steps": [
+      {
+        "title": "Brief",
+        "text": "We talk however suits you — messages or a call. We go through the goal and examples you like.",
+        "time": "day 1"
+      },
+      {
+        "title": "Design",
+        "text": "I build the style, structure and first screen. We refine it until you say “wow”.",
+        "time": "days 2–3"
+      },
+      {
+        "title": "Development",
+        "text": "Layout, animations, mobile. You get a live link and watch it come together.",
+        "time": "days 4–6"
+      },
+      {
+        "title": "Launch",
+        "text": "I check speed and mobile, connect your domain and publish the site.",
+        "time": "day 7"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": [
+      "Let's",
+      "launch",
+      "your project"
+    ],
+    "text": "Tell me about your idea — I reply within a day.",
+    "copy": "Click to copy",
+    "copied": "Copied ✓",
+    "terminal": {
+      "hint": "Try: help",
+      "commands": {
+        "help": "Commands: about · services · contact · hire · clear",
+        "about": "DEV/22 — design and development of websites with character. Based in Spain, working worldwide.",
+        "services": "Template site €150 · Custom landing €300 · Multi-page €300 + from €150/page",
+        "contact": "dev22.es@gmail.com · WhatsApp +34 695 862 740 · Instagram @dev22.es · Telegram @zkolra_bcn",
+        "hire": "Great! Message me on WhatsApp +34 695 862 740, Telegram @zkolra_bcn or Instagram @dev22.es — we can start this week 🚀"
+      },
+      "unknown": "Command not found. Type help"
+    }
+  }
+}

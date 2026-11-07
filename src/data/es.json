@@ -1,0 +1,155 @@
+{
+  "city": "España",
+  "nav": [
+    "Proyectos",
+    "Servicios",
+    "Proceso",
+    "Contacto"
+  ],
+  "cta": "Hablemos",
+  "hero": {
+    "status": "Disponible para nuevos proyectos",
+    "title": [
+      "Creo webs",
+      "que"
+    ],
+    "accent": "funcionan.",
+    "lead": "Diseño y desarrollo de webs modernas para negocios y personas con ideas. Limpias, rápidas, con carácter y animaciones que se recuerdan.",
+    "buttons": [
+      "Ver proyectos",
+      "Precios y plazos"
+    ],
+    "stats": [
+      {
+        "value": 98,
+        "label": "Lighthouse"
+      },
+      {
+        "value": 5,
+        "label": "plantillas listas"
+      },
+      {
+        "value": 7,
+        "label": "días — landing"
+      }
+    ]
+  },
+  "work": {
+    "label": "Proyectos",
+    "title": [
+      "Proyectos",
+      "destacados"
+    ],
+    "text": "Cada proyecto es un sistema propio, con su lógica, su ritmo y su carácter. Pulsa una tarjeta y la web real se abre aquí mismo: desplázate y haz clic.",
+    "open": "▶ Abrir la web aquí",
+    "watch": "▶ Ver la web",
+    "newTab": "Nueva pestaña ↗",
+    "cursor": "▶ Abrir"
+  },
+  "player": {
+    "connecting": "connecting to",
+    "loading": "loading",
+    "full": "⤢ Pantalla completa",
+    "small": "⤡ Salir",
+    "close": "Cerrar",
+    "hint": "Es la web real: desplázate y haz clic. Esc para cerrar."
+  },
+  "services": {
+    "label": "Servicios",
+    "title": [
+      "Precios",
+      "y plazos"
+    ],
+    "badge": "5 plantillas a elegir",
+    "items": [
+      {
+        "title": "Web con plantilla",
+        "price": "€150",
+        "time": "inicio rápido",
+        "text": "Elige una de las 5 plantillas de arriba. Cambio las fotos y los textos por los tuyos: la web se ve igual, con todas las animaciones, pero con tu contenido.",
+        "list": [
+          "Tus fotos y textos",
+          "Todas las animaciones",
+          "Adaptada al móvil",
+          "Publicada en tu dominio"
+        ]
+      },
+      {
+        "title": "Landing a medida",
+        "price": "€300",
+        "time": "a convenir",
+        "text": "Una web de una página creada desde cero: diseño y efectos propios, pensados para tu objetivo y tu estilo.",
+        "list": [
+          "Diseño único",
+          "Animaciones y efectos",
+          "Responsive + SEO básico",
+          "Publicada en tu dominio"
+        ]
+      },
+      {
+        "title": "Web multipágina",
+        "price": "€300 + desde €150",
+        "time": "a convenir",
+        "text": "La primera página cuesta €300 y cada página extra desde €150, según la complejidad. Un estilo coherente y navegación clara.",
+        "list": [
+          "Primera página €300",
+          "Siguientes desde €150",
+          "Un sistema de diseño",
+          "Espacio para crecer"
+        ]
+      }
+    ],
+    "note": "Una web a medida empieza con una conversación, sin necesidad de llamada: escríbeme por WhatsApp, Instagram o Telegram, cuéntame qué quieres y vemos los detalles."
+  },
+  "process": {
+    "label": "Proceso",
+    "title": [
+      "Cómo",
+      "trabajamos"
+    ],
+    "steps": [
+      {
+        "title": "Briefing",
+        "text": "Hablamos como te venga mejor, por mensajes o llamada. Vemos el objetivo y ejemplos que te gustan.",
+        "time": "día 1"
+      },
+      {
+        "title": "Diseño",
+        "text": "Defino el estilo, la estructura y la primera pantalla. Ajustamos hasta que digas «wow».",
+        "time": "días 2–3"
+      },
+      {
+        "title": "Desarrollo",
+        "text": "Maquetación, animaciones, móvil. Tienes un enlace en vivo para seguir el avance.",
+        "time": "días 4–6"
+      },
+      {
+        "title": "Lanzamiento",
+        "text": "Reviso la velocidad y el móvil, conecto tu dominio y publico la web.",
+        "time": "día 7"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": [
+      "Lancemos",
+      "tu",
+      "proyecto"
+    ],
+    "text": "Cuéntame tu idea: respondo en menos de un día.",
+    "copy": "Haz clic para copiar",
+    "copied": "Copiado ✓",
+    "terminal": {
+      "hint": "Prueba: help",
+      "commands": {
+        "help": "Comandos: about · services · contact · hire · clear",
+        "about": "DEV/22: diseño y desarrollo de webs con carácter. Desde España, para todo el mundo.",
+        "services": "Web con plantilla €150 · Landing a medida €300 · Multipágina €300 + desde €150/pág.",
+        "contact": "dev22.es@gmail.com · WhatsApp +34 695 862 740 · Instagram @dev22.es · Telegram @zkolra_bcn",
+        "hire": "¡Genial! Escríbeme por WhatsApp +34 695 862 740, Telegram @zkolra_bcn o Instagram @dev22.es y empezamos esta semana 🚀"
+      },
+      "unknown": "Comando no encontrado. Escribe help"
+    }
+  }
+}

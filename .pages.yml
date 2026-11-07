@@ -1,0 +1,198 @@
+# Админка сайта (Pages CMS — app.pagescms.org)
+# Что можно править: контакты, работы (с картинками), все тексты и цены на трёх языках.
+# Каждое сохранение = коммит в GitHub, сайт пересобирается сам за 1–2 минуты.
+
+media:
+  - name: work
+    label: Картинки работ
+    input: public/images/work
+    output: /images/work
+    extensions: [jpg, jpeg, png, webp, avif]
+
+content:
+  - name: site
+    label: "Контакты и работы"
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - name: brand
+        label: Контакты
+        type: object
+        fields:
+          - { name: name, label: "Логотип — буквы", type: string }
+          - { name: number, label: "Логотип — цифры", type: string }
+          - { name: domain, label: Домен, type: string }
+          - { name: email, label: Почта, type: string }
+          - { name: timezone, label: "Часовой пояс для часов в шапке", type: string }
+          - name: socials
+            label: Соцсети и мессенджеры
+            type: object
+            list: true
+            fields:
+              - { name: label, label: "Текст ссылки", type: string }
+              - { name: url, label: Ссылка, type: string }
+      - name: stack
+        label: Бегущая строка технологий
+        type: string
+        list: true
+      - name: projects
+        label: Работы
+        type: object
+        list: { collapsible: true }
+        fields:
+          - { name: name, label: Название, type: string }
+          - { name: year, label: Год, type: string }
+          - { name: color, label: "Цвет акцента (#hex)", type: string }
+          - { name: url, label: "Ссылка на живой сайт", type: string }
+          - name: image
+            label: "Картинка (кадр первого экрана)"
+            type: image
+            options:
+              media: work
+          - name: tag
+            label: "Сфера (на трёх языках)"
+            type: object
+            fields:
+              - { name: ru, label: RU, type: string }
+              - { name: en, label: EN, type: string }
+              - { name: es, label: ES, type: string }
+          - name: text
+            label: "Описание (на трёх языках)"
+            type: object
+            fields:
+              - { name: ru, label: RU, type: text }
+              - { name: en, label: EN, type: text }
+              - { name: es, label: ES, type: text }
+
+  - name: ru
+    label: "Тексты и цены — RU"
+    type: file
+    path: src/data/ru.json
+    format: json
+    # общая схема — та же для EN и ES (ссылка *lang ниже)
+    fields: &lang
+      - name: city
+        label: Страна в шапке (рядом с часами)
+        type: string
+      - name: nav
+        label: Пункты меню (по порядку - Работы, Услуги, Процесс, Контакт)
+        type: string
+        list: { min: 4, max: 4 }
+      - name: cta
+        label: Кнопка в шапке
+        type: string
+
+      - name: hero
+        label: "Первый экран"
+        type: object
+        fields:
+          - { name: status, label: "Статус (с зелёной точкой)", type: string }
+          - { name: title, label: "Заголовок (2 строки)", type: string, list: { min: 2, max: 2 } }
+          - { name: accent, label: "Слово, которое «расшифровывается»", type: string }
+          - { name: lead, label: Подзаголовок, type: text }
+          - { name: buttons, label: "Кнопки (Работы, Цены)", type: string, list: { min: 2, max: 2 } }
+          - name: stats
+            label: Цифры
+            type: object
+            list: { min: 3, max: 3 }
+            fields:
+              - { name: value, label: Число, type: number }
+              - { name: label, label: Подпись, type: string }
+
+      - name: work
+        label: "Блок «Работы» (сами работы — в разделе «Работы»)"
+        type: object
+        fields:
+          - { name: label, label: Метка раздела, type: string }
+          - { name: title, label: "Заголовок (2 строки)", type: string, list: { min: 2, max: 2 } }
+          - { name: text, label: Текст под заголовком, type: text }
+          - { name: open, label: "Надпись на картинке", type: string }
+          - { name: watch, label: "Кнопка «Смотреть сайт»", type: string }
+          - { name: newTab, label: "Кнопка «В новой вкладке»", type: string }
+          - { name: cursor, label: "Надпись у курсора", type: string }
+
+      - name: services
+        label: "Услуги и цены"
+        type: object
+        fields:
+          - { name: label, label: Метка раздела, type: string }
+          - { name: title, label: "Заголовок (2 строки)", type: string, list: { min: 2, max: 2 } }
+          - { name: badge, label: Плашка, type: string }
+          - name: items
+            label: Тарифы
+            type: object
+            list: { collapsible: true }
+            fields:
+              - { name: title, label: Название, type: string }
+              - { name: price, label: "Цена (например €150)", type: string }
+              - { name: time, label: Срок, type: string }
+              - { name: text, label: Описание, type: text }
+              - { name: list, label: Что входит, type: string, list: true }
+          - { name: note, label: Примечание под тарифами, type: text }
+
+      - name: process
+        label: "Процесс работы"
+        type: object
+        fields:
+          - { name: label, label: Метка раздела, type: string }
+          - { name: title, label: "Заголовок (2 строки)", type: string, list: { min: 2, max: 2 } }
+          - name: steps
+            label: "Шаги (ровно 4)"
+            type: object
+            list: { min: 4, max: 4, collapsible: true }
+            fields:
+              - { name: title, label: Название шага, type: string }
+              - { name: text, label: Описание, type: text }
+              - { name: time, label: "Когда (например «день 1»)", type: string }
+
+      - name: contact
+        label: "Контакт и терминал"
+        type: object
+        fields:
+          - { name: label, label: Метка раздела, type: string }
+          - { name: title, label: "Заголовок (3 строки)", type: string, list: { min: 3, max: 3 } }
+          - { name: text, label: Текст, type: text }
+          - { name: copy, label: "Подсказка «скопировать почту»", type: string }
+          - { name: copied, label: "«Скопировано»", type: string }
+          - name: terminal
+            label: Живой терминал
+            type: object
+            fields:
+              - { name: hint, label: Подсказка, type: string }
+              - name: commands
+                label: Ответы на команды
+                type: object
+                fields:
+                  - { name: help, label: help, type: text }
+                  - { name: about, label: about, type: text }
+                  - { name: services, label: services, type: text }
+                  - { name: contact, label: contact, type: text }
+                  - { name: hire, label: hire, type: text }
+              - { name: unknown, label: "Если команда неизвестна", type: string }
+
+      - name: player
+        label: "Служебные надписи окна просмотра сайта"
+        type: object
+        fields:
+          - { name: connecting, label: "connecting to", type: string }
+          - { name: loading, label: loading, type: string }
+          - { name: full, label: "На весь экран", type: string }
+          - { name: small, label: Свернуть, type: string }
+          - { name: close, label: Закрыть, type: string }
+          - { name: hint, label: Подсказка, type: string }
+
+
+  - name: en
+    label: "Тексты и цены — EN"
+    type: file
+    path: src/data/en.json
+    format: json
+    fields: *lang
+
+  - name: es
+    label: "Тексты и цены — ES"
+    type: file
+    path: src/data/es.json
+    format: json
+    fields: *lang

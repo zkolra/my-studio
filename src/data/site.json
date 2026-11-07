@@ -1,0 +1,124 @@
+{
+  "brand": {
+    "name": "DEV",
+    "number": "22",
+    "domain": "dev22.es",
+    "email": "dev22.es@gmail.com",
+    "timezone": "Europe/Madrid",
+    "socials": [
+      {
+        "label": "Instagram @dev22.es",
+        "url": "https://instagram.com/dev22.es"
+      },
+      {
+        "label": "WhatsApp +34 695 862 740",
+        "url": "https://wa.me/34695862740"
+      },
+      {
+        "label": "Telegram @zkolra_bcn",
+        "url": "https://t.me/zkolra_bcn"
+      }
+    ]
+  },
+  "stack": [
+    "React",
+    "Vite",
+    "GSAP",
+    "Three.js",
+    "WebGL",
+    "Canvas",
+    "Lenis",
+    "Figma",
+    "Vercel",
+    "Motion design",
+    "Responsive",
+    "SEO"
+  ],
+  "projects": [
+    {
+      "name": "MIGA",
+      "year": "2026",
+      "color": "#d0502a",
+      "url": "https://miga-ruddy-eta.vercel.app/",
+      "image": "/images/work/miga.jpg",
+      "tag": {
+        "ru": "Пекарня / Кафе",
+        "en": "Bakery / Café",
+        "es": "Panadería / Café"
+      },
+      "text": {
+        "ru": "Тёплый сайт пекарни: хрустящая типографика, горизонтальный процесс выпечки и карусель витрины.",
+        "en": "A warm bakery site: crisp typography, a horizontal baking timeline and a showcase carousel.",
+        "es": "Una web cálida para una panadería: tipografía crujiente, el proceso de horneado en horizontal y un carrusel de vitrina."
+      }
+    },
+    {
+      "name": "NOVA",
+      "year": "2026",
+      "color": "#a855f7",
+      "url": "https://nova-fintech-template.vercel.app/",
+      "image": "/images/work/nova-fintech-template.jpg",
+      "tag": {
+        "ru": "Финтех / SaaS",
+        "en": "Fintech / SaaS",
+        "es": "Fintech / SaaS"
+      },
+      "text": {
+        "ru": "Неоновый финтех: живой график, частицы-нейросеть, вращающаяся рамка тарифа и блок, который раскрывается на весь экран.",
+        "en": "Neon fintech: a live chart, a particle network, a spinning pricing border and a block that opens to full screen.",
+        "es": "Fintech de neón: gráfico en vivo, red de partículas, borde giratorio en el precio y un bloque que se abre a pantalla completa."
+      }
+    },
+    {
+      "name": "AVA NOIR",
+      "year": "2026",
+      "color": "#d40019",
+      "url": "https://ava-noir.vercel.app/",
+      "image": "/images/work/ava-noir.jpg",
+      "tag": {
+        "ru": "Стилист / Мода",
+        "en": "Stylist / Fashion",
+        "es": "Estilista / Moda"
+      },
+      "text": {
+        "ru": "3D-штора из стеклянных трубочек на входе, горизонтальная галерея и портфолио услуг, которое пролетает при прокрутке.",
+        "en": "A 3D curtain of glass tubes at the entrance, a horizontal gallery and service portfolios that fly by as you scroll.",
+        "es": "Una cortina 3D de tubos de cristal en la entrada, galería horizontal y portafolios de servicios que pasan al hacer scroll."
+      }
+    },
+    {
+      "name": "NØR",
+      "year": "2026",
+      "color": "#b5542c",
+      "url": "https://nor-studio.vercel.app/",
+      "image": "/images/work/nor-studio.jpg",
+      "tag": {
+        "ru": "Архитектура",
+        "en": "Architecture",
+        "es": "Arquitectura"
+      },
+      "text": {
+        "ru": "Облёт домов при прокрутке, каркас дома, который чертится сам, и фото «день / ночь» под курсором.",
+        "en": "House orbits on scroll, a wireframe house that draws itself and a day / night photo under the cursor.",
+        "es": "Vuelos alrededor de las casas al hacer scroll, una maqueta que se dibuja sola y una foto día / noche bajo el cursor."
+      }
+    },
+    {
+      "name": "MATEO VEGA",
+      "year": "2026",
+      "color": "#b3162c",
+      "url": "https://mateo-vega.vercel.app/",
+      "image": "/images/work/mateo-vega.jpg",
+      "tag": {
+        "ru": "Танцор / Артист",
+        "en": "Dancer / Artist",
+        "es": "Bailarín / Artista"
+      },
+      "text": {
+        "ru": "Ритм во всём: счёт «5-6-7-8», танцующие буквы, сцена и светлый кэмп с днём, который сменяется видео.",
+        "en": "Rhythm everywhere: a 5-6-7-8 count, dancing letters, the stage — and a bright camp with a day told in video.",
+        "es": "Ritmo en todo: la cuenta 5-6-7-8, letras que bailan, el escenario y un campamento luminoso con un día contado en vídeo."
+      }
+    }
+  ]
+}

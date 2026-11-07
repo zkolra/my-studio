@@ -4,9 +4,8 @@ import { useContent } from "../i18n";
 import Player from "./Player";
 import "../styles/work.css";
 
-// кадр первого экрана каждого сайта: src/assets/<slug>.jpg
-const shots = import.meta.glob("../assets/*.jpg", { eager: true, import: "default" });
-const poster = (slug) => shots[`../assets/${slug}.jpg`];
+// кадр первого экрана каждого сайта: поле image в src/data/site.json
+// (файлы лежат в public/images/work, загружаются через админку)
 
 /* Работы: карточки складываются стопкой при прокрутке — новая наезжает,
    предыдущая уменьшается и темнеет. Клик — живой сайт открывается
@@ -52,7 +51,7 @@ function Work() {
 
       <div className="work__list">
         {work.items.map((p, i) => (
-          <article className="wcard" key={p.slug} style={{ "--i": i, "--c": p.color }}>
+          <article className="wcard" key={`${p.name}-${i}`} style={{ "--i": i, "--c": p.color }}>
             <div className="wcard__inner">
               <button
                 className="wcard__media"
@@ -69,7 +68,7 @@ function Work() {
                   <span className="wcard__url">{p.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span>
                 </span>
                 <span className="wcard__screen">
-                  <img src={poster(p.slug)} alt="" loading="lazy" />
+                  <img src={p.image} alt="" loading="lazy" />
                   <span className="wcard__play mono">{work.open}</span>
                 </span>
               </button>
