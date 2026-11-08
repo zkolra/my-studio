@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: clamp(40px, 6vw, 110px);
-  padding: clamp(80px, 10vw, 150px) var(--pad);
+  padding: clamp(40px, 5vw, 75px) var(--pad);
   border-top: 1px solid var(--line);
   overflow-x: clip; /* шаги въезжают справа — не растягиваем страницу */
 }

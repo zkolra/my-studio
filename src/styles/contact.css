@@ -1,5 +1,5 @@
 .contact {
-  padding: clamp(80px, 10vw, 150px) var(--pad) 24px;
+  padding: clamp(40px, 5vw, 75px) var(--pad) 24px;
   border-top: 1px solid var(--line);
   overflow: hidden;
 }

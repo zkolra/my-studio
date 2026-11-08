@@ -1,12 +1,11 @@
 .faq {
-  padding: clamp(80px, 10vw, 150px) var(--pad);
+  padding: clamp(40px, 5vw, 75px) var(--pad);
   border-top: 1px solid var(--line);
 }
 
 .faq__head {
   display: grid;
   gap: 24px;
-  max-width: 980px;
 }
 
 .faq__title {
@@ -20,12 +19,12 @@
   color: var(--muted);
 }
 
-/* три варианта поддержки */
+/* варианты поддержки */
 .faq__plans {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: clamp(40px, 6vw, 80px);
+  margin-top: clamp(28px, 4vw, 50px);
 }
 
 .plan {
@@ -64,14 +63,13 @@
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--line);
-  font-size: clamp(28px, 2.4vw, 40px);
+  font-size: clamp(26px, 2vw, 36px);
   color: var(--lime);
-  white-space: nowrap;
 }
 
 /* вопросы-ответы */
 .faq__list {
-  margin-top: clamp(40px, 6vw, 80px);
+  margin-top: clamp(28px, 4vw, 50px);
   border-top: 1px solid var(--line);
 }
 
@@ -144,11 +142,19 @@
   color: var(--muted);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1200px) {
+  .faq__plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .faq__plans {
     grid-template-columns: 1fr;
   }
+}
 
+@media (max-width: 960px) {
   .faq__title {
     font-size: 13vw;
   }

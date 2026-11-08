@@ -155,8 +155,13 @@
       },
       {
         "title": "Care plan",
-        "price": "€49 / mo",
+        "price": "€49 / month",
         "text": "Up to 5 edits a month (texts, photos, prices), reply within 48 hours, I keep an eye on the site and remind you to renew the domain."
+      },
+      {
+        "title": "Site management",
+        "price": "from €150 / month",
+        "text": "I'm at your service during working hours: any edits and tasks on your site — new sections, promotions, seasonal updates, connecting services. Scope and price agreed together."
       }
     ],
     "items": [
@@ -170,7 +175,7 @@
       },
       {
         "q": "What if I don't want to manage the site myself?",
-        "a": "Then just message me: one-off edits from €20, or the care plan at €49 a month — up to 5 edits, reply within 48 hours. Cancel any time."
+        "a": "Then just message me. One-off edits start at €20. The care plan is €49 a month: up to 5 small edits (texts, photos, prices), reply within 48 hours. More and bigger tasks? Site management starts at €150 a month, scope agreed individually. Plans can be cancelled any time."
       },
       {
         "q": "How much do hosting and the domain cost?",

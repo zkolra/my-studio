@@ -155,8 +155,13 @@
       },
       {
         "title": "Mantenimiento",
-        "price": "€49 / mes",
+        "price": "€49 al mes",
         "text": "Hasta 5 cambios al mes (textos, fotos, precios), respuesta en 48 horas, reviso que la web funcione y te aviso de renovar el dominio."
+      },
+      {
+        "title": "Administración web",
+        "price": "desde €150 al mes",
+        "text": "Estoy a tu disposición en horario laboral: cualquier cambio o tarea en tu web — secciones nuevas, promociones, actualizaciones de temporada, conexión de servicios. Alcance y precio, según lo que acordemos."
       }
     ],
     "items": [
@@ -170,7 +175,7 @@
       },
       {
         "q": "¿Y si no quiero ocuparme de la web?",
-        "a": "Entonces escríbeme: cambios puntuales desde €20 o el plan de mantenimiento por €49 al mes, con hasta 5 cambios y respuesta en 48 horas. Puedes cancelarlo cuando quieras."
+        "a": "Entonces escríbeme. Los cambios puntuales, desde €20. El plan de mantenimiento cuesta €49 al mes: hasta 5 cambios pequeños (textos, fotos, precios) con respuesta en 48 horas. ¿Más tareas o más complejas? La administración web, desde €150 al mes, con el alcance a medida. Puedes cancelar cuando quieras."
       },
       {
         "q": "¿Cuánto cuestan el alojamiento y el dominio?",
