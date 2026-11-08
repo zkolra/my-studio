@@ -1,7 +1,7 @@
 {
   "city": "Spain",
   "nav": [
-    "Work",
+    "Templates",
     "Services",
     "Process",
     "Contact"
@@ -16,7 +16,7 @@
     "accent": "work.",
     "lead": "Design and development of modern websites for businesses and people with ideas. Clean, fast, full of character — with motion people remember.",
     "buttons": [
-      "See the work",
+      "See the templates",
       "Pricing & timing"
     ],
     "stats": [
@@ -35,12 +35,12 @@
     ]
   },
   "work": {
-    "label": "Work",
+    "label": "Templates",
     "title": [
-      "Selected",
-      "projects"
+      "Pick a",
+      "template"
     ],
-    "text": "Every project is its own system with its own logic, rhythm and character. Click a card — the live site opens right here. Scroll it, click around.",
+    "text": "5 ready-made sites: pick any of them — I'll swap in your photos and texts, and the design and animations stay. Click a card: the live site opens right here, scroll it and click around.",
     "open": "▶ Open the site here",
     "watch": "▶ View site",
     "newTab": "New tab ↗",
@@ -138,7 +138,7 @@
   "faq": {
     "label": "After launch",
     "title": [
-      "Your site is live.",
+      "Your site is live",
       "What's next?"
     ],
     "lead": "The site is fully yours: it runs on your domain, and you can change texts, prices and photos yourself. Or leave it to me — whatever suits you.",

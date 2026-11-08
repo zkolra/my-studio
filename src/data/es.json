@@ -1,7 +1,7 @@
 {
   "city": "España",
   "nav": [
-    "Proyectos",
+    "Plantillas",
     "Servicios",
     "Proceso",
     "Contacto"
@@ -16,7 +16,7 @@
     "accent": "funcionan.",
     "lead": "Diseño y desarrollo de webs modernas para negocios y personas con ideas. Limpias, rápidas, con carácter y animaciones que se recuerdan.",
     "buttons": [
-      "Ver proyectos",
+      "Ver plantillas",
       "Precios y plazos"
     ],
     "stats": [
@@ -35,12 +35,12 @@
     ]
   },
   "work": {
-    "label": "Proyectos",
+    "label": "Plantillas",
     "title": [
-      "Proyectos",
-      "destacados"
+      "Elige tu",
+      "plantilla"
     ],
-    "text": "Cada proyecto es un sistema propio, con su lógica, su ritmo y su carácter. Pulsa una tarjeta y la web real se abre aquí mismo: desplázate y haz clic.",
+    "text": "5 webs listas: elige la que quieras, cambio las fotos y los textos por los tuyos, y el diseño y las animaciones se mantienen. Pulsa una tarjeta y la web real se abre aquí mismo: desplázate y haz clic.",
     "open": "▶ Abrir la web aquí",
     "watch": "▶ Ver la web",
     "newTab": "Nueva pestaña ↗",
@@ -138,7 +138,7 @@
   "faq": {
     "label": "Después del lanzamiento",
     "title": [
-      "Tu web está lista.",
+      "Tu web está lista",
       "¿Y ahora qué?"
     ],
     "lead": "La web es totalmente tuya: funciona en tu dominio y puedes cambiar textos, precios y fotos tú mismo. O dejarlo en mis manos, como prefieras.",
