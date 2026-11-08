@@ -61,10 +61,12 @@
       "y plazos"
     ],
     "badge": "5 plantillas a elegir",
+    "promo": "Precios de lanzamiento: hasta el 28 de febrero de 2027",
     "items": [
       {
         "title": "Web con plantilla",
         "price": "€150",
+        "oldPrice": "€290",
         "time": "inicio rápido",
         "text": "Elige una de las 5 plantillas de arriba. Cambio las fotos y los textos por los tuyos: la web se ve igual, con todas las animaciones, pero con tu contenido.",
         "list": [
@@ -77,6 +79,7 @@
       {
         "title": "Landing a medida",
         "price": "€300",
+        "oldPrice": "€690",
         "time": "a convenir",
         "text": "Una web de una página creada desde cero: diseño y efectos propios, pensados para tu objetivo y tu estilo.",
         "list": [
@@ -89,6 +92,7 @@
       {
         "title": "Web multipágina",
         "price": "€300 + desde €150",
+        "oldPrice": "€690 + desde €290",
         "time": "a convenir",
         "text": "La primera página cuesta €300 y cada página extra desde €150, según la complejidad. Un estilo coherente y navegación clara.",
         "list": [
@@ -99,7 +103,8 @@
         ]
       }
     ],
-    "note": "Una web a medida empieza con una conversación, sin necesidad de llamada: escríbeme por WhatsApp, Instagram o Telegram, cuéntame qué quieres y vemos los detalles."
+    "note": "Una web a medida empieza con una conversación, sin necesidad de llamada: escríbeme por WhatsApp, Instagram o Telegram, cuéntame qué quieres y vemos los detalles.",
+    "after": "Qué recibes después del lanzamiento y cuánto cuesta el mantenimiento"
   },
   "process": {
     "label": "Proceso",
@@ -127,6 +132,69 @@
         "title": "Lanzamiento",
         "text": "Reviso la velocidad y el móvil, conecto tu dominio y publico la web.",
         "time": "día 7"
+      }
+    ]
+  },
+  "faq": {
+    "label": "Después del lanzamiento",
+    "title": [
+      "Tu web está lista.",
+      "¿Y ahora qué?"
+    ],
+    "lead": "La web es totalmente tuya: funciona en tu dominio y puedes cambiar textos, precios y fotos tú mismo. O dejarlo en mis manos, como prefieras.",
+    "plans": [
+      {
+        "title": "Tú mismo, desde el panel",
+        "price": "€0",
+        "text": "Entras al panel desde el navegador, cambias textos, precios y fotos, pulsas «Guardar» y en 1–2 minutos ya está en la web."
+      },
+      {
+        "title": "Cambio puntual",
+        "price": "desde €20",
+        "text": "Me dices qué cambiar y lo hago yo. Cambiar una foto o un precio cuesta €20; una sección nueva, según presupuesto."
+      },
+      {
+        "title": "Mantenimiento",
+        "price": "€49 / mes",
+        "text": "Hasta 5 cambios al mes (textos, fotos, precios), respuesta en 48 horas, reviso que la web funcione y te aviso de renovar el dominio."
+      }
+    ],
+    "items": [
+      {
+        "q": "¿Qué recibo después del lanzamiento?",
+        "a": "Una web funcionando en tu dominio, acceso al panel de administración y una guía breve: dónde está registrado el dominio, dónde está alojada la web, cómo hacer cambios y cómo contactarme. La web y el dominio son tuyos."
+      },
+      {
+        "q": "¿Puedo cambiar textos y fotos yo mismo?",
+        "a": "Sí. El panel se abre en el navegador como cualquier web: cambias un texto o un precio, subes una foto nueva y guardas. No necesitas saber programar, y el diseño y las animaciones están protegidos: no se pueden romper desde el panel. Te invito por email, sin crear cuentas extra."
+      },
+      {
+        "q": "¿Y si no quiero ocuparme de la web?",
+        "a": "Entonces escríbeme: cambios puntuales desde €20 o el plan de mantenimiento por €49 al mes, con hasta 5 cambios y respuesta en 48 horas. Puedes cancelarlo cuando quieras."
+      },
+      {
+        "q": "¿Cuánto cuestan el alojamiento y el dominio?",
+        "a": "El alojamiento para este tipo de webs es gratuito (Cloudflare). Solo pagas el dominio al registrador, normalmente €10–20 al año. Te ayudo a elegirlo, comprarlo y conectarlo, siempre a tu nombre."
+      },
+      {
+        "q": "¿Cuántas revisiones incluye el precio?",
+        "a": "Dos rondas de cambios sobre la web terminada están incluidas. Lo que vaya más allá se cobra como cambio puntual."
+      },
+      {
+        "q": "¿Cuánto tiempo tarda?",
+        "a": "Una web con plantilla, unos pocos días desde que tengo tus textos y fotos. Una landing a medida, alrededor de una semana; una web multipágina, según lo que acordemos."
+      },
+      {
+        "q": "¿Qué necesitas de mí?",
+        "a": "Textos, fotos, tu logo (si lo tienes) y ejemplos de webs que te gusten. ¿Aún no tienes textos? Te digo qué escribir."
+      },
+      {
+        "q": "¿Cómo es el pago?",
+        "a": "El 50% antes de empezar y el 50% antes de publicar la web en tu dominio."
+      },
+      {
+        "q": "¿Puedes añadir formularios, newsletters y automatizaciones?",
+        "a": "Sí: formularios de contacto, captación de suscriptores, newsletters y emails automáticos a tus clientes tras una compra o una consulta. Se presupuesta aparte: cuéntame qué necesitas."
       }
     ]
   },

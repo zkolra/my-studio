@@ -9,6 +9,7 @@ import Stack from "./components/Stack";
 import Work from "./components/Work";
 import Services from "./components/Services";
 import Process from "./components/Process";
+import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import { useContent } from "./i18n";
 
@@ -59,6 +60,7 @@ function App() {
           <Work />
           <Services />
           <Process />
+          <Faq />
         </main>
         <Contact />
       </LangSwitch>

@@ -101,6 +101,56 @@
   color: var(--muted);
 }
 
+/* цены запуска: текущая лаймом, будущая — зачёркнута */
+.services__promo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 8px 14px;
+  border: 1px solid rgba(184, 255, 56, 0.45);
+  border-radius: 100px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.services__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: var(--glow);
+}
+
+.svc__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 12px;
+  row-gap: 6px;
+}
+
+.svc__price s {
+  font-size: clamp(18px, 1.5vw, 24px);
+  color: var(--muted);
+  text-decoration-thickness: 2px;
+  white-space: nowrap;
+}
+
+.services__after {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(184, 255, 56, 0.5);
+  text-underline-offset: 4px;
+}
+
+.services__after:hover {
+  color: var(--lime);
+}
+
 .services__note {
   margin-top: 30px;
   font-size: 13px;

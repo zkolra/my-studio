@@ -97,7 +97,7 @@ function Contact() {
       <div className="contact__grid">
         <div>
           <span className="label">
-            <b>04</b> // {contact.label}
+            <b>05</b> // {contact.label}
           </span>
           <h2 className="contact__title display js-lines">
             {contact.title.map((t, i) => (

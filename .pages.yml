@@ -119,6 +119,7 @@ content:
           - { name: label, label: Метка раздела, type: string }
           - { name: title, label: "Заголовок (2 строки)", type: string, list: { min: 2, max: 2 } }
           - { name: badge, label: Плашка, type: string }
+          - { name: promo, label: "Цены запуска (строка над тарифами)", type: string }
           - name: items
             label: Тарифы
             type: object
@@ -126,10 +127,12 @@ content:
             fields:
               - { name: title, label: Название, type: string }
               - { name: price, label: "Цена (например €150)", type: string }
+              - { name: oldPrice, label: "Будущая цена (зачёркнутая, можно оставить пустой)", type: string }
               - { name: time, label: Срок, type: string }
               - { name: text, label: Описание, type: text }
               - { name: list, label: Что входит, type: string, list: true }
           - { name: note, label: Примечание под тарифами, type: text }
+          - { name: after, label: "Ссылка на блок «После запуска»", type: string }
 
       - name: process
         label: "Процесс работы"
@@ -145,6 +148,50 @@ content:
               - { name: title, label: Название шага, type: string }
               - { name: text, label: Описание, type: text }
               - { name: time, label: "Когда (например «день 1»)", type: string }
+
+      - name: faq
+
+        label: "После запуска: поддержка и вопросы-ответы"
+
+        type: object
+
+        fields:
+
+          - { name: label, label: Метка раздела, type: string }
+
+          - { name: title, label: "Заголовок (2 строки)", type: string, list: { min: 2, max: 2 } }
+
+          - { name: lead, label: Текст под заголовком, type: text }
+
+          - name: plans
+
+            label: "Варианты поддержки (карточки)"
+
+            type: object
+
+            list: { collapsible: true }
+
+            fields:
+
+              - { name: title, label: Название, type: string }
+
+              - { name: price, label: "Цена (например €49 / мес)", type: string }
+
+              - { name: text, label: Описание, type: text }
+
+          - name: items
+
+            label: Вопросы и ответы
+
+            type: object
+
+            list: { collapsible: true }
+
+            fields:
+
+              - { name: q, label: Вопрос, type: string }
+
+              - { name: a, label: Ответ, type: text }
 
       - name: contact
         label: "Контакт и терминал"

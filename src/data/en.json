@@ -61,10 +61,12 @@
       "& timing"
     ],
     "badge": "5 templates to choose from",
+    "promo": "Launch prices — until 28 February 2027",
     "items": [
       {
         "title": "Template website",
         "price": "€150",
+        "oldPrice": "€290",
         "time": "quick start",
         "text": "Pick one of the 5 templates above. I replace the photos and texts with yours — the site looks just the same, with every animation, only with your content.",
         "list": [
@@ -77,6 +79,7 @@
       {
         "title": "Custom landing page",
         "price": "€300",
+        "oldPrice": "€690",
         "time": "to be agreed",
         "text": "A one-page website built from scratch: your own design and effects, made for your goal and your style.",
         "list": [
@@ -89,6 +92,7 @@
       {
         "title": "Multi-page website",
         "price": "€300 + from €150",
+        "oldPrice": "€690 + from €290",
         "time": "to be agreed",
         "text": "The first page is €300, each next page from €150 depending on complexity. One consistent style and clear navigation.",
         "list": [
@@ -99,7 +103,8 @@
         ]
       }
     ],
-    "note": "A custom site starts with a conversation — no call needed. Message me on WhatsApp, Instagram or Telegram, tell me what you want, and we'll work out the details."
+    "note": "A custom site starts with a conversation — no call needed. Message me on WhatsApp, Instagram or Telegram, tell me what you want, and we'll work out the details.",
+    "after": "What you get after launch and what support costs"
   },
   "process": {
     "label": "Process",
@@ -127,6 +132,69 @@
         "title": "Launch",
         "text": "I check speed and mobile, connect your domain and publish the site.",
         "time": "day 7"
+      }
+    ]
+  },
+  "faq": {
+    "label": "After launch",
+    "title": [
+      "Your site is live.",
+      "What's next?"
+    ],
+    "lead": "The site is fully yours: it runs on your domain, and you can change texts, prices and photos yourself. Or leave it to me — whatever suits you.",
+    "plans": [
+      {
+        "title": "Do it yourself",
+        "price": "€0",
+        "text": "Open the admin panel in your browser, change texts, prices and photos, hit “Save” — it's live in 1–2 minutes."
+      },
+      {
+        "title": "One-off edit",
+        "price": "from €20",
+        "text": "Tell me what to change and I'll do it. Swapping a photo or a price is €20; a new section is quoted separately."
+      },
+      {
+        "title": "Care plan",
+        "price": "€49 / mo",
+        "text": "Up to 5 edits a month (texts, photos, prices), reply within 48 hours, I keep an eye on the site and remind you to renew the domain."
+      }
+    ],
+    "items": [
+      {
+        "q": "What do I get after launch?",
+        "a": "A working website on your domain, access to the admin panel and a short guide: where the domain is registered, where the site is hosted, how to make changes and how to reach me. The site and the domain belong to you."
+      },
+      {
+        "q": "Can I edit texts and photos myself?",
+        "a": "Yes. The admin panel opens in your browser like any website: change a text or a price, upload a new photo and save. No code needed, and the design and animations are protected — you can't break them from the admin panel. I invite you by email, no extra accounts to set up."
+      },
+      {
+        "q": "What if I don't want to manage the site myself?",
+        "a": "Then just message me: one-off edits from €20, or the care plan at €49 a month — up to 5 edits, reply within 48 hours. Cancel any time."
+      },
+      {
+        "q": "How much do hosting and the domain cost?",
+        "a": "Hosting for sites like these is free (Cloudflare). You only pay the registrar for the domain — usually €10–20 a year. I'll help you choose, buy and connect it, registered in your name."
+      },
+      {
+        "q": "How many revisions are included?",
+        "a": "Two rounds of revisions on the finished site are included. Anything beyond that is billed as a one-off edit."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "A template site takes a few days once I have your texts and photos. A custom landing page takes about a week; multi-page sites are agreed individually."
+      },
+      {
+        "q": "What do you need from me?",
+        "a": "Texts, photos, your logo (if you have one) and examples of sites you like. No texts yet? I'll tell you what to write."
+      },
+      {
+        "q": "How does payment work?",
+        "a": "50% before I start and 50% before the site goes live on your domain."
+      },
+      {
+        "q": "Can you add forms, newsletters and automation?",
+        "a": "Yes: lead forms, subscriber lists, newsletters, automatic emails to customers after a purchase or an enquiry. Quoted separately — tell me what you need."
       }
     ]
   },

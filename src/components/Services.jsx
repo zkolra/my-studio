@@ -32,6 +32,11 @@ function Services() {
             </span>
           ))}
         </h2>
+        {services.promo && (
+          <p className="services__promo mono js-fade">
+            <span className="services__dot" /> {services.promo}
+          </p>
+        )}
       </div>
       <div className="services__grid">
         {services.items.map((s, i) => (
@@ -48,7 +53,10 @@ function Services() {
               ))}
             </ul>
             <div className="svc__foot">
-              <strong className="display">{s.price}</strong>
+              <div className="svc__price">
+                <strong className="display">{s.price}</strong>
+                {s.oldPrice && <s className="display">{s.oldPrice}</s>}
+              </div>
               <span className="mono">{s.time}</span>
             </div>
           </article>
@@ -57,6 +65,11 @@ function Services() {
       <p className="services__note mono js-fade">
         <span className="lime">//</span> {services.note}
       </p>
+      {services.after && (
+        <a className="services__after mono js-fade" href="#faq">
+          <span className="lime">→</span> {services.after}
+        </a>
+      )}
     </section>
   );
 }

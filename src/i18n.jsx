@@ -36,6 +36,7 @@ function build(lang) {
     player: t.player,
     services: t.services,
     process: { ...t.process, steps: t.process.steps.map((s, i) => ({ ...s, hash: shared.processHashes[i] })) },
+    faq: t.faq,
     contact: t.contact,
   };
 }
