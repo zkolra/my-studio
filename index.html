@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="DEV/22 — дизайн и разработка сайтов, которые работают. Сайт по шаблону от €150, на заказ от €300." />
     <link rel="icon" href="/favicon.svg" />
+    <!-- шрифт логотипа грузится сразу, чтобы заставка появилась без задержки -->
+    <link rel="preload" href="/node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <title>DEV/22 — сайты, которые работают</title>
   </head>
   <body>
+    <!-- заставка видна сразу, ещё до загрузки скриптов; анимирует её src/components/Preloader.jsx -->
+    <div id="pre" class="pre dots-bg" aria-hidden="true"><span class="logo pre__logo">DEV<i></i>22</span></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

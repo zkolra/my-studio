@@ -1,19 +1,30 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { gsap, reducedMotion } from "../lib/motion";
 import { useContent } from "../i18n";
-import Logo from "./Logo";
 import "../styles/preloader.css";
 
 /* Заставка-терминал: команды «печатаются», справа загорается [OK],
-   потом «ready in 22ms» и логотип вспыхивает, как неоновая трубка. */
+   потом «ready in 22ms» и логотип вспыхивает, как неоновая трубка.
+   Фон и логотип лежат прямо в index.html (#pre) — они видны сразу,
+   ещё до загрузки скриптов. Здесь дорисовывается терминал и анимация. */
 function Preloader({ onReveal }) {
   const { preloader } = useContent();
-  const root = useRef(null);
-  const [gone, setGone] = useState(false);
+  const [host] = useState(() => document.getElementById("pre"));
+  const [gone, setGone] = useState(!host);
 
   useLayoutEffect(() => {
-    if (reducedMotion()) {
+    if (!host) {
+      onReveal();
+      return;
+    }
+    const finish = () => {
+      document.documentElement.classList.remove("no-scroll");
+      host.remove();
       setGone(true);
+    };
+    if (reducedMotion()) {
+      finish();
       onReveal();
       return;
     }
@@ -36,33 +47,28 @@ function Preloader({ onReveal }) {
         }, n + 0.2)
         .from(".pre__logo", { scale: 0.92, filter: "blur(10px)", duration: 0.8, ease: "expo.out" }, n + 0.15)
         .to(".pre__term", { opacity: 0, duration: 0.3 }, n + 0.4)
-        .to(root.current, { clipPath: "inset(0% 0% 100% 0%)", duration: 1, ease: "expo.inOut", onStart: onReveal }, n + 1.2)
-        .add(() => {
-          document.documentElement.classList.remove("no-scroll");
-          setGone(true);
-        });
-    }, root);
+        .to(host, { clipPath: "inset(0% 0% 100% 0%)", duration: 1, ease: "expo.inOut", onStart: onReveal }, n + 1.2)
+        .add(finish);
+    }, host);
     return () => {
       ctx.revert();
       document.documentElement.classList.remove("no-scroll");
     };
-  }, [onReveal]);
+  }, [onReveal, host]);
 
   if (gone) return null;
 
-  return (
-    <div className="pre dots-bg" ref={root} aria-hidden="true">
-      <div className="pre__term mono">
-        {preloader.lines.map((l) => (
-          <p className="pre__line" key={l}>
-            <span className="lime">&gt;</span> <span className="pre__txt" data-text={l} />
-            <span className="pre__ok">[ OK ]</span>
-          </p>
-        ))}
-        <p className="pre__ready lime">✓ {preloader.ready}</p>
-      </div>
-      <Logo className="pre__logo" />
-    </div>
+  return createPortal(
+    <div className="pre__term mono">
+      {preloader.lines.map((l) => (
+        <p className="pre__line" key={l}>
+          <span className="lime">&gt;</span> <span className="pre__txt" data-text={l} />
+          <span className="pre__ok">[ OK ]</span>
+        </p>
+      ))}
+      <p className="pre__ready lime">✓ {preloader.ready}</p>
+    </div>,
+    host
   );
 }
 
